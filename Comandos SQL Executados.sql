@@ -1,0 +1,11 @@
+SELECT NOME, DISCIPLINA, NOTA
+FROM NOTAS
+INNER JOIN
+ALUNOS ON Alunos.ID_aluno = notas.id_aluno;
+
+
+
+
+
+
+
