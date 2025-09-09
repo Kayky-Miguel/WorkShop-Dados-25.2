@@ -1,0 +1,79 @@
+CREATE SCHEMA DESAFIO;
+USE DESAFIO;
+
+CREATE TABLE Alunos(
+    id_aluno INT(8) PRIMARY KEY NOT NULL auto_increment,
+    nome varchar(45) not null,
+    periodo int(5) not null,
+    curso varchar(50) not null
+);
+
+CREATE TABLE Notas(
+    id_nota int(8) PRIMARY KEY NOT NULL auto_increment,
+    nota float(8) NOT NULL,
+    disciplina varchar(50) not null,
+    id_aluno INT(8) not null,
+    foreign key (id_aluno) references Alunos(id_aluno)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+
+Inserção e Atualização de Dados
+
+SQL
+
+INSERT INTO alunos(nome, periodo,curso)
+VALUES
+('Maria Silva', 1, 'Engenharia'),
+('João Pereira', 2, 'Direito'),
+('Ana Costa', 3, 'Medicina'),
+('Lucas Santos', 4, 'Engenharia'),
+('Carla Souza', 1, 'Administração'),
+('Pedro Gomes', 2, 'Ciência da Computação'),
+('Fernanda Lima', 5, 'Psicologia'),
+('Rafael Alves', 3, 'Arquitetura'),
+('Juliana Rocha', 2, 'Engenharia'),
+('Gabriel Fernandes', 6, 'Direito');
+
+INSERT INTO notas (nota, disciplina, id_aluno)
+VALUES
+(8.5, 'Matemática', 1),
+(7.0, 'História', 2),
+(9.2, 'Português', 3),
+(6.8, 'Geografia', 4),
+(8.0, 'Física', 5),
+(7.5, 'Química', 6),
+(9.0, 'Biologia', 7),
+(8.7, 'Inglês', 8),
+(7.8, 'Artes', 9),
+(9.5, 'Educação Física', 10);
+
+UPDATE NOTAS
+SET nota = 8.4
+Where ID_NOTA = 2;
+Consultas (Queries)
+
+SQL
+
+SELECT * FROM NOTAS
+where nota > 7;
+
+SELECT * FROM NOTAS
+where nota > 9;
+
+SELECT AVG(nota) FROM NOTAS;
+
+SELECT MIN(nota) FROM NOTAS;
+
+SELECT SUM(nota) FROM NOTAS;
+
+SELECT PERIODO, count(*)
+FROM ALUNOS
+WHERE CURSO = 'Direito'
+group by PERIODO;
+
+SELECT NOME, DISCIPLINA, NOTA
+FROM NOTAS
+INNER JOIN
+ALUNOS ON Alunos.ID_aluno = notas.id_aluno;
