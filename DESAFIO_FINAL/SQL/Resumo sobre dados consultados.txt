@@ -1,0 +1,13 @@
+Com base nas consultas, é possível analisar que:
+
+1) Há clientes de diferentes nacionalidades, o que indica um turismo forte no local;
+
+2) Há uma boa receita bruta gerada;
+
+3) A partir dos métodos de pagamento, é possível traçar uma estratégia para atrair mais clientes
+
+4)A consulta que une CLIENTE e ALUGUEL permite identificar quais clientes concluíram aluguéis. 
+Isso é importante para que haja entendimento sobre a base de clientes ativos e para quem sabe, futuramente programas de fidelidade. 
+
+5) A consulta que une VEICULO e MANUTENCAO permite analisar o histórico de manutenção de cada veículo. 
+Isso é essencial para a gestão da frota, pois você pode identificar quais veículos nessecitam mais reparos ou qual tipo de manutenção é mais frequente para cada modelo, impactando os custos operacionais.
